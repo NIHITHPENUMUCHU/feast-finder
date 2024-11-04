@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-orange-500 border border-orange-500 px-6 py-2 rounded-full hover:bg-orange-50 transition-all transform hover:scale-105 active:scale-95;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .icon-bounce {
+    @apply hover:animate-bounce cursor-pointer;
+  }
+
+  .icon-spin {
+    @apply hover:animate-spin cursor-pointer;
+  }
+
+  .icon-pulse {
+    @apply hover:animate-pulse cursor-pointer;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin;
+}
